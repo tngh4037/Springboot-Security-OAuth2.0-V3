@@ -12,6 +12,8 @@ import com.cos.securityex01.model.User;
 
 import lombok.Data;
 
+// Security Session > Authentication(UsernamePasswordAuthenticationToken) > UserDetails(PrincipalDetails)
+
 // Authentication 객체에 저장할 수 있는 유일한 타입
 public class PrincipalDetails implements UserDetails, OAuth2User{
 
@@ -61,6 +63,8 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 
 	@Override
 	public boolean isEnabled() {
+		// ex) 우리 사이트에서 1년동안 회원이 로그인을 안하면, 휴면 계정으로 하기로 함.
+
 		return true;
 	}
 	
